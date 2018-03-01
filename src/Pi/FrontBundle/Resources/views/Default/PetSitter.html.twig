@@ -1,0 +1,36 @@
+{% extends 'PiFrontBundle::Layout.html.twig' %}
+{% block content %}
+    <div class="gallery">
+        <div class="container">
+            <h3 class="agileits-title"> PetSitter</h3>
+            <div class="gallery-agileinfo">
+                <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                    <a href="{{ asset('images/g1.jpg') }}" class="imghvr-hinge-right figure">
+                        <img src="{{ asset('images/g1.jpg') }}" alt="" title="sara akrout"/>
+                        <div class="agile-figcaption">
+                            <h4> sara akrout</h4>
+                            <p> adresse : 25 rue rayahin tnis  </p>
+                            <p> ville : ariana </p>
+                            <p>téléphone : 25416324 </p>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                    <a href="{{ asset('images/g2.jpg') }}" class="imghvr-hinge-right figure">
+                        <img src="{{ asset('images/g2.jpg') }}" alt="" title="mouhamed ahmed "/>
+                        <div class="agile-figcaption">
+                            <h4>amani ahmed </h4>
+                            <p> adresse : 2 rue lbasatin tunis  </p>
+                            <p> ville : chargiya </p>
+                            <p>téléphone : 29455789 </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

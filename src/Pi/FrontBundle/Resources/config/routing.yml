@@ -1,0 +1,58 @@
+pi_front_homepage:
+    path:     /
+    defaults: { _controller: PiFrontBundle:Default:index }
+layout:
+    path:     /accueil
+    defaults: { _controller: PiFrontBundle:Default:layout }
+About:
+    path: /About
+    defaults: { _controller: PiFrontBundle:Default:About }
+Adoption:
+    path: /Adoption
+    defaults: { _controller: PiFrontBundle:Default:Adoption }
+Magasins:
+    path: /Magasins
+    defaults: { _controller: PiFrontBundle:Default:Magasins }
+Veterinaires:
+    path: /Veterinaires
+    defaults: { _controller: PiFrontBundle:Default:Veterinaires }
+Assurances:
+    path: /Assurances
+    defaults: { _controller: PiFrontBundle:Default:Assurances }
+calcul:
+    path: /calcul
+    defaults: { _controller: PiFrontBundle:Default:calculer }
+Evenements:
+    path: /Evenements
+    defaults: { _controller: PiFrontBundle:Default:Evenements }
+Associations:
+   path: /Associations
+   defaults: { _controller: PiFrontBundle:Default:Associations }
+PetSitter:
+   path: /PetSitter
+   defaults: { _controller: PiFrontBundle:Default:PetSitter }
+Sante:
+   path: /Sante
+   defaults: { _controller: PiFrontBundle:Default:Sante }
+SupportAdoption:
+   path: /SupportAdoption
+   defaults: { _controller: PiFrontBundle:Default:SupportAdoption}
+PlusEvent:
+   path: /PlusEvent
+   defaults: { _controller: PiFrontBundle:Default:PlusEvent}
+ContactUs:
+   path: /ContactUs
+   defaults: { _controller: PiFrontBundle:Default:ContactUs}
+Article:
+   path: /Article
+   defaults: { _controller: PiFrontBundle:Default:Article }
+ArticleDetails:
+    path: /ArticleDetails
+    defaults: { _controller: PiFrontBundle:Default:ArticleDetails }
+ListFaq:
+    path: /ListFaq
+    defaults: { _controller: PiFrontBundle:Default:ListFaq }
+deleteComment:
+    path: /deleteComment/{idarticle}
+    defaults: { _controller: PiFrontBundle:Default:deleteComment }
+

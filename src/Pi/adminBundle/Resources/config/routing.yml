@@ -1,0 +1,78 @@
+pi_admin_homepage:
+    path:     /
+    defaults: { _controller: PiAdminBundle:Default:indexa }
+layouta:
+    path:     /admin
+    defaults: { _controller: PiAdminBundle:Default:layoutAdmin }
+gallerya:
+    path:     /gallerya
+    defaults: { _controller: PiAdminBundle:Default:gallerya }
+inboxa:
+    path:     /inboxa
+    defaults: { _controller: PiAdminBundle:Default:inboxa }
+chartsa:
+    path:     /chartsa
+    defaults: { _controller: PiAdminBundle:Default:chartsa }
+calendara:
+    path:     /calendara
+    defaults: { _controller: PiAdminBundle:Default:calendara }
+petsittera:
+    path:     /petsittera
+    defaults: { _controller: PiAdminBundle:Default:petsittera }
+Associationa:
+    path:     /Associationa
+    defaults: { _controller: PiAdminBundle:Default:Associationa }
+Magasinsa:
+    path:     /Magasinsa
+    defaults: { _controller: PiAdminBundle:Default:Magasinsa }
+Evenementsa:
+    path:     /Evenementsa
+    defaults: { _controller: PiAdminBundle:Default:Evenementsa }
+annimauxa:
+    path:     /annimauxa
+    defaults: { _controller: PiAdminBundle:Default:annimauxa }
+addVeterinaire:
+    path:     /addVeterinaire
+    defaults: { _controller: PiAdminBundle:Veterinaires:addVeterinaire }
+listVeterinaire:
+    path:     /listVeterinaire
+    defaults: { _controller: PiAdminBundle:Veterinaires:listVeterinaire }
+deleteVeterinaire:
+    path:     /deleteVeterinaire
+    defaults: { _controller: PiAdminBundle:Veterinaires:deleteVeterinaire }
+rechercheVeterinaire:
+    path:     /rechercheVeterinaire
+    defaults: { _controller: PiAdminBundle:Veterinaires:rechercheVeterinaire }
+UpdateVeterinaire:
+    path:     /UpdateVeterinaire
+    defaults: { _controller: PiAdminBundle:Veterinaires:UpdateVeterinaire }
+addAssurance:
+    path:     /addAssurance
+    defaults: { _controller: PiAdminBundle:assurance:addAssurance }
+listAssurance:
+    path:     /listAssurance
+    defaults: { _controller: PiAdminBundle:assurance:listAssurance }
+deleteAssurance:
+    path:     /deleteAssurance
+    defaults: { _controller: PiAdminBundle:assurance:deleteAssurance }
+rechercheAssurance:
+    path:     /rechercheAssurance
+    defaults: { _controller: PiAdminBundle:assurance:rechercheAssurance }
+updateAssurance:
+    path:     /updateAssurance
+    defaults: { _controller: PiAdminBundle:assurance:updateAssurance }
+addArticle:
+    path:     /addArticle
+    defaults: { _controller: PiAdminBundle:Article:addArticle }
+listArticle:
+    path:     /listArticle
+    defaults: { _controller: PiAdminBundle:Article:listArticle }
+deleteArticle:
+    path:     /deleteArticle
+    defaults: { _controller: PiAdminBundle:Article:deleteArticle }
+rechercheArticle:
+    path:     /rechercheArticle
+    defaults: { _controller: PiAdminBundle:Article:rechercheArticle }
+updateArticle:
+    path:     /updateArticle
+    defaults: { _controller: PiAdminBundle:Article:updateArticle }

@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
+
+        <div align="center" style="color: red">
+
+
+        <title>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</title>
+        </div>
+    </head>
+
+    <body>
+
+        <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
+
+        <ul>
+
+            <div class="icon-box col-md-3 col-sm-4"><a class="agile-icon" href="#"><i class="fa fa-envelope"></i></a>
+
+            <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+            </div>
+
+
+
+            <div class="icon-box col-md-3 col-sm-4"><a class="agile-icon" href="#location-arrow"><i class="fa fa-location-arrow"></i></a>
+
+            <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
+
+            </div>
+
+
+
+
+            <div class="icon-box col-md-3 col-sm-4"><a class="agile-icon" href="#trash-o"><i class="fa fa-trash-o"></i></a>
+            <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+            </div>
+        </ul>
+        <br>
+        <br>
+<br>
+        <br>
+        <br>
+        <br>
+
+        <div align="center">
+
+        {% block fos_message_content %}{% endblock %}
+        </div>
+    </body>
+</html>
+{% endblock %}

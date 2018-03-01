@@ -1,0 +1,38 @@
+{% extends 'PiFrontBundle::Layout.html.twig' %}
+{% block content %}
+<div class="gallery">
+    <div class="container">
+        <h3 class="agileits-title">Magasins pour Animaux</h3>
+        <div class="gallery-agileinfo">
+            <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                <a href="{{ asset('images/g1.jpg') }}" class="imghvr-hinge-right figure">
+                    <img src="{{ asset('images/g1.jpg') }}" alt="" title="Samm"/>
+                    <div class="agile-figcaption">
+                        <h4>Sam</h4>
+                        <p>age : 3ans </p>
+                        <p>poids : 3kg </p>
+                        <p>race : mmmm </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4 col-xs-6 w3gallery-grids">
+                <a href="{{ asset('images/g2.jpg') }}" class="imghvr-hinge-right figure">
+                    <img src="{{ asset('images/g2.jpg') }}" alt="" title="weiss"/>
+                    <div class="agile-figcaption">
+                        <h4>Age : 2ans </h4>
+                        <p>Poids : 2kg</p>
+                        <p>Race : mmmmm</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    <h3 class="agileits-title">Localiser les magasins les plus proches </h3>
+    <div class="agileits-w3layouts-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
+                allowfullscreen></iframe>
+    </div>
+
+
+{% endblock %}

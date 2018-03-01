@@ -1,0 +1,148 @@
+<link href="{{ asset('Back/css/bootstrap.min.css') }}" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="{{ asset('Back/css/style.css') }}" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="{{ asset('Back/css/morris.css') }}" type="text/css"/>
+<!-- Graph CSS -->
+<link href="{{ asset('Back/css/font-awesome.css') }}" rel="stylesheet">
+<!-- jQuery -->
+<script src="{{ asset('Back/js/jquery-2.1.4.min.js') }}"></script>
+<!-- //jQuery -->
+<!-- tables -->
+<link rel="stylesheet" type="text/css" href="{{ asset('Back/css/table-style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('Back/css/basictable.css') }}" />
+<script type="text/javascript" src="{{ asset('Back/js/jquery.basictable.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').basictable();
+
+        $('#table-breakpoint').basictable({
+            breakpoint: 768
+        });
+
+        $('#table-swap-axis').basictable({
+            swapAxis: true
+        });
+
+        $('#table-force-off').basictable({
+            forceResponsive: false
+        });
+
+        $('#table-no-resize').basictable({
+            noResize: true
+        });
+
+        $('#table-two-axis').basictable();
+
+        $('#table-max-height').basictable({
+            tableWrapper: true
+        });
+    });
+</script>
+<!-- //tables -->
+<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<!-- lined-icons -->
+<link rel="stylesheet" href="{{ asset('Back/css/icon-font.min.css') }}" type='text/css' />
+<link href="{{ asset('Front/css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+<link href="{{ asset('Front/css/font-awesome.css') }}" rel="stylesheet">
+<!-- font-awesome icons -->
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="{{ asset('Front/js/jquery-2.2.3.min.js') }}"></script>
+<!-- //js -->
+<!-- web-fonts -->
+<link href="{{ asset('//fonts.googleapis.com/css?family=Limelight') }}" rel="stylesheet">
+<link href="{{ asset('//fonts.googleapis.com/css?family=Junge') }}" rel="stylesheet">
+<link href="{{ asset('//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic') }}"
+      rel='stylesheet' type='text/css'>
+
+
+<div class="agile-grids">
+    <div class="agile-tables">
+        <div class="w3l-table-info">
+    <table>
+
+        <thead>
+
+
+    <div class="signin-form profile">
+        <tr>
+            <th>{% trans from 'FOSMessageBundle' %}subject{% endtrans %}</th>
+            <th>{% trans from 'FOSMessageBundle' %}starter{% endtrans %}</th>
+            <th>{% trans from 'FOSMessageBundle' %}startdate{% endtrans %}</th>
+            <th>{% trans from 'FOSMessageBundle' %}messages{% endtrans %}</th>
+            <th>{% trans from 'FOSMessageBundle' %}last_message{% endtrans %}</th>
+            <th>{% trans from 'FOSMessageBundle' %}actions{% endtrans %}</th>
+        </tr>
+    </div>
+        </thead>
+
+    <tbody>
+
+
+    {% if threads %}
+        {% for thread in threads %}
+            <tr>
+                <td>
+                    <a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">
+                        {{ thread.subject }}
+                    </a>
+
+                    {% if not fos_message_is_read(thread) %}
+                        ({% trans from 'FOSMessageBundle' %}new{% endtrans %})
+                    {% endif %}
+                </td>
+                <td>
+                    {{ thread.createdBy }}
+                </td>
+                <td>
+                    {{ thread.createdAt|date }}
+                </td>
+                <td>
+                    {{ thread.messages|length }}
+                </td>
+                <td>
+                    {% if thread.lastMessage %}
+                        <a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}#message_{{ thread.lastMessage.id }}" title="{% trans from 'FOSMessageBundle' %}goto_last{% endtrans %}">
+                            →
+                        </a>
+                        {% trans with {'%date%': thread.lastMessage.createdAt|date} from 'FOSMessageBundle' %}on{% endtrans %}
+                        <br />
+                        {% trans with {'%sender%': thread.lastMessage.sender|e } from 'FOSMessageBundle' %}by{% endtrans %}
+                    {% else %}
+                        ----
+                    {% endif %}
+                </td>
+                <td>
+                    {% if fos_message_can_delete_thread(thread) %}
+                        {% if fos_message_deleted_by_participant(thread) %}
+                            {% set formAction %}{{ url('fos_message_thread_undelete', {'threadId': thread.id}) }}{% endset %}
+                            {% set submitValue %}{% trans from 'FOSMessageBundle' %}undelete{% endtrans %}{% endset %}
+                        {% else %}
+                            {% set formAction %}{{ url('fos_message_thread_delete', {'threadId': thread.id}) }}{% endset %}
+                            {% set submitValue %}{% trans from 'FOSMessageBundle' %}delete{% endtrans %}{% endset %}
+                        {% endif %}
+                        <form action="{{ formAction }}" method="post">
+                                <input type="submit" value="{{ submitValue }}" />
+                        </form>
+                        </td>
+
+                    {% endif %}
+
+        {% endfor %}
+
+
+    {% else %}
+        <tr>
+            <td colspan="6">
+                {% trans from 'FOSMessageBundle' %}no_thread{% endtrans %}.
+            </td>
+        </tr>
+    {% endif %}
+
+    </tbody>
+    </table>
+        </div>
+    </div>
+</div>
